@@ -1,0 +1,142 @@
+.media {
+    font-size: 0;
+    background-color: #F4F4F7;
+}
+
+.media > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.media-left {
+    width: calc(50% - 215px);
+    padding: 60px 30px 50px calc(50% - 585px);
+    background-color: #fff;
+}
+
+.media .headline {
+    border-bottom: 1px solid #F2F2F2;
+    width: 340px;
+}
+
+.media-left .item:first-child {
+    margin-top: 40px;
+}
+
+.media-left .item {
+    margin-top: 30px;
+}
+
+.media-left .item > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.media-left .item > .img {
+    display: inline-block;
+    margin-top: 24px;
+    width: auto;
+    height: 32px;
+}
+
+.media-left .item > .text_bar {
+    float: right;
+    width: 190px;
+    height: 68px;
+}
+
+.media-left .item > .text_bar .date {
+    font-size: 12px;
+    line-height: 14px;
+    color: #A7A7B5;
+}
+
+.media-left .item > .text_bar .desc {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #00053E;
+}
+
+.media-left .check_more {
+    margin-top: 69px;
+}
+
+
+.media-right {
+    margin: 50px 0 0 30px;
+    width: 770px;
+
+}
+
+.media-right-nav {
+    background-color: #fff;
+}
+
+.media-right-nav-item {
+    display: inline-block;
+    width: 185px;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #A7A7B5;
+    text-align: center;
+    cursor: pointer;
+}
+
+.media-right-nav-item.active {
+    color: #fff;
+    background-color: #235DC2;
+}
+
+
+.media-right-content {
+    font-size: 0;
+}
+
+
+.media-right .item {
+    display: inline-block;
+    margin: 30px 0 0 30px;
+    width: 370px;
+    background-color: #fff;
+}
+
+.media-right .item .wrap {
+    padding: 0 20px 30px;
+}
+
+
+.media-right .item:first-child {
+    margin-left: 0;
+}
+
+.media-right .item .img {
+    display: block;
+    width: 100%;
+}
+
+.media-right .item .date {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A7A7B5;
+}
+
+.media-right .item .title {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #00053E;
+}
+
+.media-right .item .detail {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #2E2E33;
+}
+
+.media-right .check_more {
+    margin-top: 30px;
+}

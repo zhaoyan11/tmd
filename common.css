@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    background-color: #fff;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.width_limit {
+    margin: 0 auto;
+    width: 1170px;
+}
+
+.headline {
+    height: 40px;
+}
+
+.headline .text {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FEA500;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    vertical-align: text-top;
+}
+
+.check_more {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.check_more-text {
+    color: #FEA500!important;
+    font-size: 13px;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.check_more-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+

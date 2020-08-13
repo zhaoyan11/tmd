@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            position: relative;
+            margin: auto;
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+        ul {
+            width: 4000px;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            left: 0;
+        }
+        li {
+            float: left;
+        }
+        img {
+            width: 800px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul class="carousel-images">
+        <li><img class="carousel-img" src=".././img/lab-3498579_1920.png" alt=""></li>
+        <li><img class="carousel-img" src=".././img/hot_news_item1.png" alt=""></li>
+        <li><img class="carousel-img" src=".././img/hot_news_item2.png" alt=""></li>
+        <li><img class="carousel-img" src=".././img/hot_news_item3.png" alt=""></li>
+        <li><img class="carousel-img"  src=".././img/media_personage1.png" alt=""></li>
+    </ul>
+</div>
+index: <i id="index">1</i>
+<button style="margin: 100px 0 0 650px" onclick="t(-1)">-1</button>
+<button onclick="t(1)">+1</button>
+
+<script>
+    let ul = document.querySelector('.carousel-images')
+    let index = 1;
+    let total = 5;
+    let imgWidth = 800;
+
+    function t(direction, time) {
+        index+=direction;
+        if (index === total+1) {
+            index = 1
+        }
+        if (index === 0) {
+            index = 5
+        }
+
+        let final = (1-index) * imgWidth;
+        let distance = time / 5;
+
+        let intervalTime = 5;
+        let interval = setInterval(function () {
+            if (ul.offsetLeft === final) {
+                clearInterval(interval)
+            } else {
+                ul.style.left = ul.offsetLeft - 16 + 'px';
+                document.getElementById('index').innerText = index;
+            }
+        }, 5)
+    }
+
+
+
+
+</script>
+</body>
+</html>

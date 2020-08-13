@@ -1,0 +1,155 @@
+.focus_news {
+    height: 460px;
+    background-color: #031E69;
+    text-align: center;
+    color: #fff;
+}
+
+.carousel {
+    /* 触发一个bfc，避免变局合并*/
+    position: relative;
+    display: inline-block;
+    width: 1170px;
+    text-align: left;
+}
+
+.carousel-text_area {
+    padding-top: 100px;
+}
+
+
+.focus_news .headline {
+    border-bottom: 1px solid #354B87;
+}
+
+.carousel-text_area-date {
+    margin-top: 30px;
+    font-size: 12px;
+    line-height: 17px;
+    color: #A7A7B5;
+}
+
+.carousel-text_area-title {
+    margin-top: 7px;
+    width: 350px;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.carousel-text_area-summary {
+    margin-top: 15px;
+    width: 350px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.carousel-text_area .check_more {
+    margin-top: 65px;
+}
+
+
+.carousel-img_area {
+    position: absolute;
+    top: 60px;
+    left: 400px;
+    width: 770px;
+    height: 460px;
+}
+
+.carousel-img_area .img_display {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.carousel-images {
+    position: absolute;
+    left: 0;
+    width: calc(770px * 5);
+}
+
+ul.carousel-images li {
+    float: left;
+    width: 770px;
+    height: 460px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-toggle_tool {
+    position: absolute;
+    top: 400px;
+    left: -60px;
+    font-size: 0;
+}
+
+.carousel-toggle_tool .last,
+.carousel-toggle_tool .next {
+    display: inline-block;
+    padding: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.carousel-toggle_tool .last {
+    background-color: #FEAE19;
+}
+
+.carousel-toggle_tool .next {
+    background-color: #EB9B07;
+}
+
+.carousel-toggle_tool .last > img,
+.carousel-toggle_tool .next > img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.carousel-toggle_tool .progress {
+    position: absolute;
+    top: 16px;
+    left: 150px;
+    width: 660px;
+}
+
+.carousel-toggle_tool .progress > *{
+    position: absolute;
+    color: #6E707A;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.carousel-toggle_tool .progress .current_index {
+    top: 0;
+    left: 0;
+    color: #fff
+}
+
+.carousel-toggle_tool .progress .final_index {
+    top: 0;
+    right: 0;
+}
+
+.carousel-toggle_tool .total_progress_line {
+    top: 8px;
+    left: 30px;
+    width: 600px;
+    height: 2px;
+    background-color: #6E707A;
+}
+
+.carousel-toggle_tool .current_progress_line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    background-color: #fff;
+}
