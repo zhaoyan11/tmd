@@ -62,13 +62,13 @@
     right: 0;
     bottom: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .carousel-images {
     position: absolute;
     left: 0;
-    width: calc(770px * 5);
+    width: calc(770px * 6);
 }
 
 ul.carousel-images li {

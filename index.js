@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let carouselEle = document.querySelector('.focus_news .carousel');
-    let imagesEle = document.querySelector('.focus_news .carousel-images');
-    let toolLastEle = document.querySelector('.focus_news .carousel-toggle_tool .last');
-    let toolNextEle = document.querySelector('.focus_news .carousel-toggle_tool .next');
+    var imgUlEle = document.querySelector('.focus_news .carousel-images');
+    var toolLastEle = document.querySelector('.focus_news .carousel-toggle_tool .last');
+    var toolNextEle = document.querySelector('.focus_news .carousel-toggle_tool .next');
 
     toolLastEle.addEventListener('click', function (e) {
         toggle(-1)
@@ -11,27 +10,47 @@ document.addEventListener('DOMContentLoaded', function () {
     toolNextEle.addEventListener('click', function (e) {
         toggle(1)
     })
+
+
+    var total = imgUlEle.querySelectorAll('.carousel-img').length;
+    imgUlEle.appendChild(imgUlEle.children[0].cloneNode(true));
+
+    var index = 0, num = 1, internal;
+    function toggle(direction) {
+        index += direction;
+        var width = imgUlEle.querySelector('.carousel-img').offsetWidth;
+
+        if (index > total) {
+            imgUlEle.style.left = 0;
+            index = 1;
+        }
+
+        if (index < 0) {
+            imgUlEle.style.left = -width * (total) + 'px';
+            index = total - 1;
+        }
+
+        rollTo(imgUlEle, - index * width);
+
+        num = index === total ? 1: index + 1;
+        document.querySelector('.current_index').innerText = ('0' + num).length > 2 ? num: ('0' + num);
+        document.querySelector('.current_progress_line').style.width = num * 120 + 'px';
+    }
+
+    function rollTo(dom, finalOffsetLeft) {
+        clearInterval(internal);
+        var t = 5;
+        var d = finalOffsetLeft - dom.offsetLeft > 0 ? 15 : -15;
+
+        internal = setInterval(function () {
+            if (Math.abs(finalOffsetLeft - dom.offsetLeft) < Math.abs(d)) {
+                clearInterval(internal);
+                dom.style.left = finalOffsetLeft + 'px';
+            } else {
+                dom.style.left = dom.offsetLeft + d + 'px';
+            }
+        }, t)
+    }
 })
-
-
-let index = 1;
-function toggle(direction) {
-    let imagesEle = document.querySelector('.focus_news .carousel-images');
-    let imgWidth = imagesEle.querySelector('.carousel-img').offsetWidth;
-    let total = imagesEle.querySelectorAll('.carousel-img').length;
-
-    index+=direction;
-    if (index === total+1) {
-        index = 1
-    }
-    if (index === 0) {
-        index = 5
-    }
-
-    imagesEle.style.left = (1-index) * imgWidth + 'px';
-    document.querySelector('.current_index').innerText = '0'+index;
-    document.querySelector('.current_progress_line').style.width = index * 120 + 'px';
-
-}
 
 
