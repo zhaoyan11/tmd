@@ -1,0 +1,132 @@
+@import "mixin.less";
+
+/* 1792px 以上*/
+.header {
+  @header-height: 80px;
+  @header-border-top-width: 3px;
+  @nav-height: @header-height - @header-border-top-width;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  border-top: @header-border-top-width solid #235dc2;
+  width: 100%;
+  height: @header-height;
+  .font(16px, 400, 22px);
+  text-align: right;
+  background-color: #fff;
+
+  .header-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 100px;
+    .background("../img/logo.png");
+  }
+
+  .header-nav {
+    display: inline-block;
+    .nav-item {
+      float: left;
+      border-left: 1px solid #F2F2F2;
+      height: @nav-height;
+      line-height: @nav-height;
+      vertical-align: middle;
+      & > a {
+        padding: 0 30px;
+      }
+
+      &.more {
+        .icon-arrow-down {
+          margin-left: 8px;
+          .icon(6px, 4px, "../img/header_icon_arrow_down.png");
+        }
+        &:hover .sub_nav {
+          display: block;
+        }
+        .sub_nav {
+          display: none;
+          width: 100%;
+          text-align: center;
+          .font(14px, 400, 20px);
+          .sub_nav-item {
+            padding: 20px 0 0;
+            background-color: #fff;
+            cursor: pointer;
+            &:last-child {
+              padding-bottom: 20px;
+            }
+          }
+          .triangle {
+            padding-top: 10px;
+            line-height: 0;
+            .icon-arrow-up {
+              .icon(14px, 7px, "../img/header_icon_arrow_up.png");
+            }
+          }
+        }
+      }
+
+      &.menu {
+        .icon-menu {
+          .icon(20px, 20px, "../img/header_icon_menu.png");
+        }
+        display: none;
+      }
+
+      .icon-search {
+        .icon(20px, 20px, "../img/header_icon_search.png");
+      }
+
+      &.contribute {
+        background-color: #EB9B07;
+        a {
+          color: #fff;
+        }
+      }
+
+      &.notice {
+        display: none;
+        background-color: #EB9B07;
+        a {
+          color: #fff;
+        }
+        .icon-arrow-down-white {
+          margin-left: 8px;
+          .icon(6px, 4px, "../img/header_icon_arrow_down_white.png");
+        }
+      }
+
+      & a {
+        color: #00053E;
+      }
+
+      &:last-child {
+        border-right: 1px solid #F2F2F2;
+      }
+    }
+  }
+
+}
+
+/* 1024px 以上 */
+@media screen and (max-width: 1791px) {
+  .header {
+    .header-logo {
+      width: 340px;
+      height: 94px;
+    }
+
+    .header-nav {
+      .nav-item {
+        display: none;
+        &.menu,
+        &.search,
+        &.contribute {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
